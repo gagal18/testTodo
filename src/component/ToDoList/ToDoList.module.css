@@ -1,0 +1,25 @@
+.main{
+    width: 50%;
+    margin: auto;
+}
+.main li{
+    list-style-type: none;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+}
+.img{
+    width: 50px;
+    border-radius: 50%;
+}
+.main .button{
+    background-color: red;
+    padding: 15px;
+}
+.main .button:hover{
+    background-color: rgb(230, 119, 119);
+    padding: 15px;
+}
