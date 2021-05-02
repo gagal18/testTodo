@@ -16,7 +16,7 @@
     border-radius: 50%;
 }
 .main .button{
-    background-color: red;
+    background-color: rgb(255, 0, 0);
     padding: 15px;
 }
 .main .button:hover{
