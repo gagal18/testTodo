@@ -14,8 +14,8 @@ function App() {
      <main>
      <Navbar/>
             <Switch>
-                <Route path="/" component={Home} exact />
-                <Route path="/sign" component={Sign} exact />
+                <Route path="/testTodo" component={Home} exact />
+                <Route path="/testTodo/sign" component={Sign} exact />
             </Switch>
         </main>
         

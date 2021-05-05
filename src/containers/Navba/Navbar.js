@@ -6,8 +6,8 @@ import classes from './Navbar.module.css'
 function Navbar(props) {
     return (
       <div className = {classes.Navbar}>
-               <Link to="/">Home</Link>
-        <Link to="/sign">Sign in</Link>
+        <Link to="/testTodo">Home</Link>
+        <Link to="/testTodo/sign">Sign in</Link>
       </div>
     );
   };
