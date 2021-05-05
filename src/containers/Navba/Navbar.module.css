@@ -1,0 +1,16 @@
+.Navbar{
+    height: 100%;
+    width: 100vw;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: flex-end;
+}
+.Navbar a{
+    font-size: 20px;
+    text-decoration: none;
+    color: grey;
+    padding: 15px;
+    width: 15%;
+    text-align: center;
+    border: 1px solid black;
+}

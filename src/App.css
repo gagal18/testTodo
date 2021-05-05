@@ -1,9 +1,10 @@
 .App {
   text-align: center;
 }
-
-.enterNew{
+button {
+  margin: auto!important;
   display: flex;
-  align-items: center;
-  justify-content: center;
+}
+a{
+  text-decoration: none;
 }

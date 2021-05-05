@@ -1,4 +1,4 @@
-import { Typography, TextField, Button, Avatar } from '@material-ui/core';
+import { TextField, Button , Typography } from '@material-ui/core';
 import { useEffect, useState } from 'react'
 import Aux from '../../hoc/Auxiliary/Auxiliary'
 import axios from '../../axios-order'
@@ -62,10 +62,11 @@ const ToDoList = (props) => {
   return (
     <Aux>
 
-      <Typography variant="h3">To do list</Typography>
-      <Typography variant="h3">Welcome {props.user.displayName} <img className={classes.img} src={props.user.photoURL} alt={props.user.photoURL}></img></Typography>
 
-      <div className="enterNew">
+<Typography variant="h3">To do list</Typography>
+      <Typography variant="h3">Welcome {props.user.displayName} <img className={classes.img} src={props.user.photoURL} alt={props.user.photoURL}></img></Typography>
+        
+      <div className={classes.enterNew}>
         <TextField id="standard-basic" label="New to-do" value={input} onChange={e => setInput(e.target.value)} />
         <Button variant="contained" onClick={() => putInData(input)}>Enter</Button>
 
