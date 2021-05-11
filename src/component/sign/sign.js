@@ -1,17 +1,15 @@
 /* eslint-disable no-unused-vars */
-import React, { useRef, useState } from 'react';
+import React, { Component } from 'react';
+import { useHistory } from "react-router-dom";
 import { Button } from '@material-ui/core';
-
 import classes from './sign.module.css'
 import ToDoList from '../ToDoList/ToDoList'
-
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 
 // Initialize Firebase
@@ -27,26 +25,17 @@ firebase.initializeApp({
 
 
 const auth = firebase.auth();
-const firestore = firebase.firestore();
 
-function Sign() {
-
-  const [user] = useAuthState(auth);
-  
+const Sign  = (props) =>{
+    const [user] = useAuthState(auth);
     if(user){
-      console.log(user)
+      console.log('USER PROPS',user)
+      console.log(props.history)
     }else{
       console.log('we dont have user')
     }
-  
-
-
   return (
-    <div className="sign">
-      <header>
-        <SignOut />
-      </header>
-
+    <div className={classes.sign}>
       <section>
         {user ? <ToDoList user={user} /> : <SignIn />}
       </section>
@@ -54,12 +43,11 @@ function Sign() {
     </div>
   );
 }
-
 function SignIn() {
-
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
+    
     
   }
 
@@ -70,12 +58,4 @@ function SignIn() {
   )
 
 }
-
-
-function SignOut() {
-  return auth.currentUser && (
-    <Button className="sign-out" variant="contained" onClick={() => auth.signOut()}>Sign Out</Button>
-  )
-}
-
 export default Sign;

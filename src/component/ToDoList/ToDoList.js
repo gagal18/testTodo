@@ -19,7 +19,7 @@ const ToDoList = (props) => {
   }
   useEffect(() => {
     getData()
-  }, [])
+  })
   const putInData = (content) => {
     axios.post(`/data/${props.user.uid}.json`, {
       content: content
@@ -64,7 +64,6 @@ const ToDoList = (props) => {
 
 
 <Typography variant="h3">To do list</Typography>
-      <Typography variant="h3">Welcome {props.user.displayName} <img className={classes.img} src={props.user.photoURL} alt={props.user.photoURL}></img></Typography>
         
       <div className={classes.enterNew}>
         <TextField id="standard-basic" label="New to-do" value={input} onChange={e => setInput(e.target.value)} />
