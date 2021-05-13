@@ -31,7 +31,7 @@ const Home = (props) => {
     <Button onClick={()=>{props.history.push('/testTodo/sign')}}>Go to the list</Button>
   </p> : <Aux>
         <Typography variant="h3">To do list</Typography>
-        <Typography variant="h4">Please log in</Typography>
+        <Typography variant="h4">Please log in -></Typography>
         <SignIn />
         </Aux>
         
