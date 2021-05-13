@@ -4,13 +4,8 @@ import { BrowserRouter, Route, Switch ,Link } from 'react-router-dom';
 import Sign from './component/sign/sign'
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  decrement,
-  increment,
-  incrementByAmount,
-  incrementAsync,
-  incrementIfOdd,
-  selectCount,
-  selectCountText
+  setText,
+  selectText
 } from './store/counterSlice';
 import Home from './containers/Home/Home'
 import Navbar from './component/Navbar/Navbar'
@@ -27,16 +22,16 @@ const auth = firebase.auth();
 
 function App() {
   const [user] = useAuthState(auth);
-  const text  = useSelector(selectCountText)
+  const text  = useSelector(selectText)
   console.log(text)
   const dispatch = useDispatch();
   if(user){
     console.log('I am from HOME',user)
-    dispatch(increment(user))
+    dispatch(setText(user))
     console.log('HIELLOE FROM REDUX',text)
   }else{
     console.log('we dont have user')
-    dispatch(increment('null'))
+    dispatch(setText('null'))
   }
 
 

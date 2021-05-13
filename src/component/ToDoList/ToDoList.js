@@ -51,8 +51,9 @@ const ToDoList = (props) => {
       .map(el => {
         console.log(el)
         return <li id={el[0]} key={el[0]}>
-          {el[1].content}
-          <Button className={classes.button} variant="contained" onClick={(e) => deleteData(el[0], el[1].content)}>Delete</Button>
+          <Typography variant="h4">{el[1].content}</Typography>
+          
+          <Button className={classes.button} onClick={(e) => deleteData(el[0], el[1].content)}>Delete</Button>
           </li>
       })
   }
@@ -63,10 +64,10 @@ const ToDoList = (props) => {
     <Aux>
 
 
-<Typography variant="h3">To do list</Typography>
+<Typography variant="h3">Tasks to be done</Typography>
         
       <div className={classes.enterNew}>
-        <TextField id="standard-basic" label="New to-do" value={input} onChange={e => setInput(e.target.value)} />
+        <TextField id="standard-basic" label="New task" value={input} onChange={e => setInput(e.target.value)} />
         <Button variant="contained" onClick={() => putInData(input)}>Enter</Button>
 
       </div>

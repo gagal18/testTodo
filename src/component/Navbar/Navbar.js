@@ -3,13 +3,14 @@ import classes from './Navbar.module.css'
 import { useSelector } from 'react-redux';
 import { Button } from '@material-ui/core';
 import {
-  selectCountText
+  selectText
 } from '../../store/counterSlice';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
+import Aux from '../../hoc/Auxiliary/Auxiliary';
 
 
 
@@ -18,14 +19,18 @@ import 'firebase/analytics';
 const auth = firebase.auth();
 
 function Navbar() {
-  const text  = useSelector(selectCountText)
+  const text  = useSelector(selectText)
   console.log('NAVBAR',text)
-  let name = text ? <p>
+  let name = text ? <Aux>
+    <div>
     <span>{text.displayName}</span>
     <img src={text.photoURL} alt={text.photoURL}></img>
+    </div>
+    <div className={classes.btn}>
     <SignOut />
+    </div>
   
-  </p> : <p></p>
+  </Aux> : <p></p>
 
     return (
       <div className = {classes.Navbar}>
@@ -40,7 +45,7 @@ function Navbar() {
     );
     function SignOut() {
       return auth.currentUser && (
-        <Button className="sign-out" variant="contained" onClick={() => auth.signOut()}>Sign Out</Button>
+        <Button variant="contained" onClick={() => auth.signOut()}>Sign Out</Button>
       )
     }
     

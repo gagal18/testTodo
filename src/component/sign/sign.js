@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { Component ,useEffect } from 'react';
-import { useHistory } from "react-router-dom";
+import React, { useEffect } from 'react';
 import { Button } from '@material-ui/core';
 import classes from './sign.module.css'
 import ToDoList from '../ToDoList/ToDoList'

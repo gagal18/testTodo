@@ -2,7 +2,7 @@ import classes from './Home.module.css';
 import { Typography , Button } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import {
-  selectCountText
+  selectText
 } from '../../store/counterSlice';
 import Aux from '../../hoc/Auxiliary/Auxiliary'
 import firebase from 'firebase/app';
@@ -15,7 +15,7 @@ const auth = firebase.auth();
 
 
 const Home = (props) => {
-  const text  = useSelector(selectCountText)
+  const text  = useSelector(selectText)
   useEffect(()=>{
     if(text.email){
       console.log(text.email)
@@ -27,11 +27,12 @@ const Home = (props) => {
   
   }, [])
     let homeRen = text.email ? <p>
-    You are logged in  
-    <Button onClick={()=>{props.history.push('/testTodo/sign')}}>Go to the list</Button>
+      <Typography variant="h3">You are succsesfully logged in! </Typography>
+     
+    <Button variant="contained" onClick={()=>{props.history.push('/testTodo/sign')}}>Go to the list</Button>
   </p> : <Aux>
-        <Typography variant="h3">To do list</Typography>
-        <Typography variant="h4">Please log in -</Typography>
+        <Typography variant="h3">Task list</Typography>
+        <Typography variant="h4">Please log in!</Typography>
         <SignIn />
         </Aux>
         
