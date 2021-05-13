@@ -15,19 +15,20 @@ const auth = firebase.auth();
 
 
 const Home = (props) => {
-    const text  = useSelector(selectCountText)
-    useEffect(() => {
-        
-        console.log('HOME',text)
-        if(!text){
-            props.history.push('/testTodo')
-        }else{
-            props.history.push('/testTodo/sign')
-        }
-    })
-    
-    let homeRen = text ? <p>
+  const text  = useSelector(selectCountText)
+  useEffect(()=>{
+    if(text.email){
+      console.log(text.email)
+      props.history.push('/testTodo/sign')
+    }else{
+        console.log('there is no EMAIL')
+        props.history.push('/testTodo')
+    }
+  
+  }, [])
+    let homeRen = text.email ? <p>
     You are logged in  
+    <Button onClick={()=>{props.history.push('/testTodo/sign')}}>Go to the list</Button>
   </p> : <Aux>
         <Typography variant="h3">To do list</Typography>
         <Typography variant="h4">Please log in</Typography>

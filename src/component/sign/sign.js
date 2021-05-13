@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { Component } from 'react';
+import React, { Component ,useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { Button } from '@material-ui/core';
 import classes from './sign.module.css'
@@ -28,12 +28,16 @@ const auth = firebase.auth();
 
 const Sign  = (props) =>{
     const [user] = useAuthState(auth);
-    if(user){
-      console.log('USER PROPS',user)
-      console.log(props.history)
-    }else{
-      console.log('we dont have user')
-    }
+    useEffect(()=>{
+      if(user){
+        console.log('USER PROPS',user)
+        console.log(props.history)
+      }else{
+        console.log('we dont have user')
+        props.history.goBack('/testTodo')
+      }
+    },[])
+    
   return (
     <div className={classes.sign}>
       <section>

@@ -19,7 +19,7 @@ const ToDoList = (props) => {
   }
   useEffect(() => {
     getData()
-  })
+  }, [])
   const putInData = (content) => {
     axios.post(`/data/${props.user.uid}.json`, {
       content: content
