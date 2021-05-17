@@ -1,0 +1,12 @@
+.Footer{
+    bottom: 0;
+    position: fixed;
+    background-color:cadetblue;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+.Footer a {
+    text-decoration: none;
+    color: cornsilk;
+}

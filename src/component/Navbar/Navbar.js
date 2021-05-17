@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Button } from '@material-ui/core';
 import {
   selectText
-} from '../../store/counterSlice';
+} from '../../store/dataSlice';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';

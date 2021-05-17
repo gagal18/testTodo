@@ -3,7 +3,7 @@ import { Typography , Button } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import {
   selectText
-} from '../../store/counterSlice';
+} from '../../store/dataSlice';
 import Aux from '../../hoc/Auxiliary/Auxiliary'
 import firebase from 'firebase/app';
 import 'firebase/firestore';

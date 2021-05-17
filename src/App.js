@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   setText,
   selectText
-} from './store/counterSlice';
+} from './store/dataSlice';
 import Home from './containers/Home/Home'
 import Navbar from './component/Navbar/Navbar'
 import './App.css'
@@ -14,7 +14,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
-
+import Footer from './component/Footer/Footer'
 import { useAuthState } from 'react-firebase-hooks/auth';
 const auth = firebase.auth();
 
@@ -44,7 +44,7 @@ function App() {
                 <Route path="/testTodo/sign" render={(props) => <Sign {...props} />}  exact />
             </Switch>
         </main>
-        
+     <Footer />   
     </div>
   );
 }
