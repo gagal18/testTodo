@@ -51,7 +51,7 @@ const ToDoList = (props) => {
       .map(el => {
         console.log(el)
         return <li id={el[0]} key={el[0]}>
-          <Typography variant="h4">{el[1].content}</Typography>
+          <p>{el[1].content}</p>
           
           <Button className={classes.button} onClick={(e) => deleteData(el[0], el[1].content)}>Delete</Button>
           </li>

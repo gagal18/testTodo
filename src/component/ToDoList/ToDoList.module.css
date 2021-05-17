@@ -13,6 +13,9 @@
   width: 100%;
   margin: auto;
 }
+.main li p{
+  font-size: 35px;
+}
 button {
   display: flex!important;
 }
@@ -42,5 +45,14 @@ button {
   .main {
     width: 80%;
     font-size: small;
+  }
+  .enterNew{
+    width: 80%;
+  }
+  .enterNew input{
+    width: 100%;
+  }
+  .main li p{
+    font-size: 15px;
   }
 }

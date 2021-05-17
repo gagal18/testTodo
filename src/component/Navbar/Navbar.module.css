@@ -38,3 +38,41 @@
     text-align: center;
     border: 1px solid black;
 }
+.Mobile{
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    width: 100vw;
+}
+.Mobile button{
+    margin: 15px!important;
+    padding: 15px;
+    height: 50px;
+    width: 30%;
+
+}
+.Mobile button img{
+    width:40%;
+}
+.Mobile ul{
+    width: 35%;
+    margin-bottom: 50px;
+}
+.Mobile ul li{
+    list-style: none;
+    height: 50px;
+    margin: 0;
+}
+.Mobile ul li a{
+    width: 45%;
+}
+@media only screen and (max-width: 600px) {
+    .ElemLink {
+      display: none;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .Mobile {
+      display: none;
+    }
+  }
